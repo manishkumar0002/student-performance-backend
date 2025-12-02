@@ -46,12 +46,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Swagger / OpenAPI 3 UI -->
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.5.0</version>
-        </dependency>
+       
 
         <!-- Database -->
         <dependency>
@@ -135,32 +130,7 @@
                 </configuration>
             </plugin>
 
-            <!-- ✅ Modern OpenAPI Generator Plugin -->
-            <plugin>
-                <groupId>org.openapitools</groupId>
-                <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>${openapi.generator.version}</version>
-                <executions>
-                    <execution>
-                        <id>generate-html-docs</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <generatorName>html2</generatorName>
-                            <inputSpec>http://localhost:8080/v3/api-docs</inputSpec>
-                            <output>${project.build.directory}/openapi-docs</output>
-                            <configOptions>
-                                <hideDownloadButton>true</hideDownloadButton>
-                                <useBootstrap>true</useBootstrap>
-                                <theme>flattop</theme>
-                            </configOptions>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
+           
             <!-- Optional: For manually adding intro text and producing report PDFs -->
             <plugin>
                 <groupId>org.asciidoctor</groupId>
